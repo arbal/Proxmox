@@ -100,7 +100,8 @@ fi
 info "Using '$STORAGE' for storage location."
 
 # Get the next guest VM/LXC ID
-CTID=$(pvesh get /cluster/nextid)
+nextid=$(pvesh get /cluster/nextid)
+CTID=${1:-$nextid}
 info "Container ID is $CTID."
 
 # Download latest Debian 10 LXC template
